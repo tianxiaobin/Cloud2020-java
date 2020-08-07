@@ -1,0 +1,6 @@
+com\alone\entity\BaseEntity.class
+com\alone\api\CommonResult.class
+com\alone\api\IErrorCode.class
+com\alone\api\ResultCode.class
+com\alone\api\CommonPage.class
+com\alone\entity\Payment.class

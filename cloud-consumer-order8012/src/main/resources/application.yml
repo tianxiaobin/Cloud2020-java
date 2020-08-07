@@ -1,0 +1,10 @@
+server:
+  port: 8012
+
+spring:
+  application:
+    name: cloud-order-service
+  cloud:
+    zookeeper:
+      connect-string: 121.37.158.111:2181
+      max-retries: 10

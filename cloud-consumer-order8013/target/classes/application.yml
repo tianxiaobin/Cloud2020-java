@@ -1,0 +1,20 @@
+server:
+  port: 8013
+
+spring:
+  application:
+    name: cloud-order-service
+  cloud:
+    consul:
+      host: 121.37.158.111
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}
+        preferIpAddress: true   # 表示注册时使用IP而不是hostname
+        enabled: true       # 启用服务发现
+        register: true      # 启用服务注册
+        deregister: true    # 表示停止时取消注册
+        health-check-interval: 10s            # 健康检查频率
+        health-check-critical-timeout: 30s    # 健康检查失败多长时间后，取消注册
+        health-check-path: /actuator/health   # 健康检查路径
+      #        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port} # Consul 注册服务 ID 应用名称+服务器IP+端口 默认artifactId

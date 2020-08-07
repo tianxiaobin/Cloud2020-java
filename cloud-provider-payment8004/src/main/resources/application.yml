@@ -1,0 +1,22 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://121.37.158.111:3306/payment-alone?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  cloud:
+    zookeeper:
+      connect-string: 121.37.158.111:2181
+      max-retries: 10 # 最大超时时间
+
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.alone.entity
+  configuration:
+    map-underscore-to-camel-case: true
